@@ -11,11 +11,12 @@ describe('cheshire', () => {
     expect(process.env.URL_CRYPTO_KITTIES_API).toBe('http://localhost:4000')
   })
 
-  it('accounts getter should return accounts defined in config', () => {
-    expect(cheshire.accounts).toEqual(config.accounts)
-    expect(cheshire.accounts.length).toBe(10)
-    expect(cheshire.accounts[0].address).toBe('0x182fc09c33fdd6c2f5b2562f3ca721fa954689c8')
-  })
+  // This will vary on your config, so we commented it out.
+  // it('accounts getter should return accounts defined in config', () => {
+  //   expect(cheshire.accounts).toEqual(config.accounts)
+  //   expect(cheshire.accounts.length).toBe(10)
+  //   expect(cheshire.accounts[0].address).toBe('0x182fc09c33fdd6c2f5b2562f3ca721fa954689c8')
+  // })
 
   it('contractAddress should return given contract address', () => {
     process.env.ADDRESS_TEST = '0x123'
@@ -127,11 +128,12 @@ describe('cheshire', () => {
 
     const helpText = console.log.mock.calls.map(call => call[0]).join('')
 
-    expect(helpText).toMatch(/Available Accounts/)
-    expect(helpText).toMatch(/\(0\) 0x182fc09c33fdd6c2f5b2562f3ca721fa954689c8/)
+    // This will changed based on your accounts, so we commented it out.
+    // expect(helpText).toMatch(/Available Accounts/)
+    // expect(helpText).toMatch(/\(0\) 0x182fc09c33fdd6c2f5b2562f3ca721fa954689c8/)
 
-    expect(helpText).toMatch(/Private Keys/)
-    expect(helpText).toMatch(/\(0\) 0x76a67ae288fd67ea8d4f7fb94f50c36b606d9448db579584af90d52105f9d8cf/)
+    // expect(helpText).toMatch(/Private Keys/)
+    // expect(helpText).toMatch(/\(0\) 0x76a67ae288fd67ea8d4f7fb94f50c36b606d9448db579584af90d52105f9d8cf/)
 
     expect(helpText).toMatch(/Testnet Contracts/)
     expect(helpText).toMatch(/KittyCore/)
