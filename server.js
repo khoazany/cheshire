@@ -99,7 +99,7 @@ const Server = {
   },
 
   async start() {
-    await this.startTestnet()
+    // await this.startTestnet()
     await this.compileContracts()
     await this.deployContracts()
     await this.startApiServer()
